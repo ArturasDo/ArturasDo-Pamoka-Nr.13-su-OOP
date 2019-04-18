@@ -23,6 +23,7 @@ class FootballPlayer(Player):
         self.red_cards = red_cards
 
 # Enter of data to the data_list
+data_list = open("data_list.txt", "w")
 while True:
     selection = input("Enter 'B' for entering BasketBallPlayer, 'F' - FootBallPlayer and 'C' - to cancel: ")
 
@@ -35,5 +36,6 @@ while True:
     first_name = input("Enter first name: ")
     last_name = input("Enter Last name: ")
     x = dict(type=type, first_name=first_name, last_name=last_name)
-    with open("data_list.txt", "w") as data_list:
-        data_list.write(json.dumps(x))
+#    with open("data_list.txt", "w") as data_list:
+    data_list.write(json.dumps(x))
+data_list.close()
